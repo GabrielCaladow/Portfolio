@@ -2,9 +2,11 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  display: flex;
+  /* As colunas laterais têm o mesmo tamanho, então o menu fica exatamente no centro. */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
+  gap: 16px;
   height: var(--header-height);
   padding: 0 var(--gutter);
   background: var(--color-bg);
@@ -12,14 +14,42 @@
 }
 
 .logo {
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  justify-self: start;
+  border-radius: 50%;
   text-decoration: none;
+}
+
+.logo-mark {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.06em;
 }
 
 .logo-dot {
   color: var(--color-accent);
+}
+
+.site-header nav {
+  justify-self: center;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    gap: 8px;
+  }
+}
+
+.header-cta {
+  justify-self: end;
 }
 
 .section {
