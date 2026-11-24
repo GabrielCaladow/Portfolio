@@ -1,0 +1,28 @@
+:root {
+  --navy: #000080;
+  --cream: #fffdd0;
+  --coral: #ff6a3d;
+
+  --color-bg: var(--cream);
+  --color-surface: #fffef0;
+  --color-text: var(--navy);
+  --color-muted: #3b3b7a;
+  --color-accent: var(--coral);
+  --color-line: rgb(0 0 128 / 12%);
+
+  --font-sans: "Geist", system-ui, sans-serif;
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  --header-height: 64px;
+  --content-width: 1120px;
+  --gutter: 32px;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --gutter: 16px;
+  }
+}

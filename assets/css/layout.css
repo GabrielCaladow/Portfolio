@@ -1,0 +1,30 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 var(--gutter);
+  background: var(--color-bg);
+  border-bottom: 2px dotted var(--color-line);
+}
+
+.logo {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.logo-dot {
+  color: var(--color-accent);
+}
+
+.section {
+  max-width: var(--content-width);
+  min-height: 80vh;
+  margin: 0 auto;
+  padding: 48px var(--gutter);
+}

@@ -1,0 +1,54 @@
+/* Pílula do header: só o link da seção atual mostra o rótulo. */
+.nav-list {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.nav-link .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.nav-label {
+  max-width: 0;
+  margin-left: 0;
+  overflow: hidden;
+  opacity: 0;
+  white-space: nowrap;
+  transition: max-width 0.5s ease-out, margin-left 0.5s ease-out, opacity 0.3s;
+}
+
+.nav-link:hover {
+  background: var(--color-surface);
+}
+
+.nav-link[aria-current="location"] {
+  background: var(--color-surface);
+  border-color: var(--color-line);
+}
+
+.nav-link[aria-current="location"] .icon {
+  color: var(--color-accent);
+}
+
+.nav-link[aria-current="location"] .nav-label {
+  max-width: 100px;
+  margin-left: 8px;
+  opacity: 1;
+}
