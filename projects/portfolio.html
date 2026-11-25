@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Este portfólio · Gabriel Calado</title>
+  <meta name="description" content="Case: como Gabriel Calado construiu este portfólio com HTML, CSS e JavaScript puros, segurança por padrão e automações com GitHub Actions.">
+  <link rel="preload" href="../assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/project.css">
+  <script type="module" src="../assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="header-sentinel" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-bar">
+      <a class="logo" href="../index.html" aria-label="Gabriel Calado, voltar ao início">
+        <span class="logo-mark" aria-hidden="true">G<span class="logo-dot">.</span></span>
+      </a>
+      <nav aria-label="Seções do portfólio">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="../index.html#inicio" data-tooltip="Início"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#home"></use></svg><span class="nav-label">Início</span></a></li>
+          <li><a class="nav-link" href="../index.html#projetos" data-tooltip="Projetos"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#grid"></use></svg><span class="nav-label">Projetos</span></a></li>
+          <li><a class="nav-link" href="../index.html#sobre" data-tooltip="Sobre"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#user"></use></svg><span class="nav-label">Sobre</span></a></li>
+          <li><a class="nav-link" href="../index.html#novidades" data-tooltip="Novidades"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#activity"></use></svg><span class="nav-label">Novidades</span></a></li>
+          <li><a class="nav-link" href="../index.html#eventos" data-tooltip="Eventos"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#calendar"></use></svg><span class="nav-label">Eventos</span></a></li>
+          <li><a class="nav-link" href="../index.html#contato" data-tooltip="Contato"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#mail"></use></svg><span class="nav-label">Contato</span></a></li>
+        </ul>
+      </nav>
+      <a class="header-cta" href="mailto:gabrielcastrocalado@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio">
+        <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#mail"></use></svg>
+        <span class="header-cta-label">Vamos conversar</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="conteudo" class="case">
+    <a class="case-back" href="../index.html#projetos">← Voltar aos projetos</a>
+
+    <p class="pill">Código aberto</p>
+    <h1 class="case-title">Este <span class="highlight">portfólio</span></h1>
+
+    <ul class="case-tools" aria-label="Ferramentas usadas">
+      <li><svg class="icon" role="img" aria-label="HTML"><use href="../assets/icons/sprite.svg#html5"></use></svg></li>
+      <li><svg class="icon" role="img" aria-label="CSS"><use href="../assets/icons/sprite.svg#css3"></use></svg></li>
+      <li><svg class="icon" role="img" aria-label="JavaScript"><use href="../assets/icons/sprite.svg#javascript"></use></svg></li>
+      <li><svg class="icon" role="img" aria-label="GitHub"><use href="../assets/icons/sprite.svg#github"></use></svg></li>
+      <li><svg class="icon" role="img" aria-label="Claude"><use href="../assets/icons/sprite.svg#claude"></use></svg></li>
+    </ul>
+
+    <div class="case-banner">
+      <div class="project-cover project-cover-portfolio">
+        <svg class="project-cover-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#github"></use></svg>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <nav class="case-toc" aria-label="Partes do case">
+        <a href="#problema">O problema</a>
+        <a href="#solucao">O que eu fiz</a>
+        <a href="#resultado">Resultado</a>
+        <a href="#aprendizado">O que aprendi</a>
+      </nav>
+
+      <div class="case-content">
+        <section id="problema" aria-labelledby="problema-titulo">
+          <h2 id="problema-titulo">O problema</h2>
+          <p>Eu precisava de um portfólio para a faculdade e para recrutadores. Mas não queria só uma página bonita: queria um site que eu entendesse linha por linha, com código aberto e seguro.</p>
+        </section>
+
+        <section id="solucao" aria-labelledby="solucao-titulo">
+          <h2 id="solucao-titulo">O que eu fiz</h2>
+          <p>Planejei tudo antes de escrever código e construí o site seção por seção:</p>
+          <ul>
+            <li><strong>Sem framework e sem build:</strong> só HTML, CSS e JavaScript. O navegador lê os arquivos como eles estão.</li>
+            <li><strong>Um arquivo por responsabilidade:</strong> as cores e medidas ficam num lugar só, e cada comportamento tem o seu módulo de JavaScript.</li>
+            <li><strong>Interações leves:</strong> o header vira pílula e o menu acompanha a seção com <code>IntersectionObserver</code>; a faixa de ferramentas calcula o próprio loop e pausa quando sai da tela.</li>
+            <li><strong>Conteúdo vivo:</strong> posts, eventos e vídeos vêm de arquivos JSON. O site confere cada item antes de mostrar e nunca insere texto como HTML.</li>
+            <li><strong>Vídeos automáticos:</strong> uma GitHub Action roda todo dia, lê o feed do meu canal no YouTube, baixa as capas para dentro do site e publica sozinha.</li>
+            <li><strong>Segurança por padrão:</strong> política de segurança de conteúdo (CSP) sem scripts nem estilos escritos dentro do HTML, nenhuma dependência de terceiros e foto sem metadados.</li>
+            <li><strong>Planejado com IA:</strong> o design, as decisões e o registro de cada dia ficaram no meu segundo cérebro, com a IA como parceira de projeto.</li>
+          </ul>
+        </section>
+
+        <section id="resultado" aria-labelledby="resultado-titulo">
+          <h2 id="resultado-titulo">Resultado</h2>
+          <p>O site que você está vendo. O código inteiro está aberto no GitHub.</p>
+          <p><a class="button button-primary" href="https://github.com/GabrielCaladow/Portfolio" target="_blank" rel="noopener noreferrer">Ver o código no GitHub</a></p>
+        </section>
+
+        <section id="aprendizado" aria-labelledby="aprendizado-titulo">
+          <h2 id="aprendizado-titulo">O que aprendi</h2>
+          <p>Planejar antes de codar economiza retrabalho. E dá para usar IA sem perder o controle: ela ajuda a construir, mas cada linha tem que fazer sentido para mim.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

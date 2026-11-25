@@ -84,7 +84,7 @@
             Procuro um estágio para aplicar o que já sei e aprender ainda mais.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#projetos">Ver projetos</a>
+            <a class="button button-primary" href="#projetos">Venha ver meus projetos</a>
             <a class="button" href="#contato">Falar comigo</a>
           </div>
         </div>
@@ -173,22 +173,120 @@
             </div>
           </a>
         </li>
+        <li>
+          <a class="project-card" href="projects/portfolio.html">
+            <div class="project-cover project-cover-portfolio">
+              <svg class="project-cover-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#github"></use></svg>
+              <div class="project-shade">
+                <h3 class="project-name">Este portfólio</h3>
+                <ul class="project-tools" aria-label="Ferramentas usadas">
+                  <li><svg class="icon" role="img" aria-label="HTML"><use href="assets/icons/sprite.svg#html5"></use></svg></li>
+                  <li><svg class="icon" role="img" aria-label="CSS"><use href="assets/icons/sprite.svg#css3"></use></svg></li>
+                  <li><svg class="icon" role="img" aria-label="JavaScript"><use href="assets/icons/sprite.svg#javascript"></use></svg></li>
+                  <li><svg class="icon" role="img" aria-label="GitHub"><use href="assets/icons/sprite.svg#github"></use></svg></li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-details">
+              <p><strong>Código aberto</strong> HTML, CSS e JS puros, com automação diária</p>
+              <span class="project-more">Ver case</span>
+            </div>
+          </a>
+        </li>
       </ul>
     </section>
 
     <section id="sobre" class="section" aria-labelledby="sobre-titulo">
-      <h2 id="sobre-titulo">Sobre mim</h2>
-      <p>Em construção.</p>
+      <h2 id="sobre-titulo" class="section-title">Sobre <span class="highlight">mim</span></h2>
+      <div class="about-text">
+        <p>
+          Tenho 20 anos e curso Ciência da Computação na CESAR School, em Recife. Tenho computador desde cedo
+          e já precisei consertar o meu várias vezes, então tecnologia sempre fez parte da minha rotina.
+        </p>
+        <p>
+          Gosto de automatizar processos, criar produtos e transformar ideias em negócios. Hoje estudo IA aplicada:
+          usar modelos de linguagem para construir ferramentas que ajudam pessoas e empresas.
+        </p>
+      </div>
+
+      <h3 class="beyond-title">Além do <span class="highlight">Código</span></h3>
+      <p class="beyond-lead">O que eu faço fora da tela e as habilidades que isso me deu.</p>
+
+      <ul class="beyond">
+        <li class="beyond-card">
+          <h4 class="beyond-skill"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#wrench"></use></svg>Resolução de problemas</h4>
+          <p class="beyond-origin">Consertando meu próprio PC desde cedo</p>
+          <p>Quando algo quebra, eu investigo até achar a causa e resolver.</p>
+        </li>
+        <li class="beyond-card">
+          <h4 class="beyond-skill"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#dumbbell"></use></svg>Disciplina</h4>
+          <p class="beyond-origin">Musculação</p>
+          <p>Treino com constância. O resultado vem de aparecer todo dia, mesmo sem vontade.</p>
+        </li>
+        <li class="beyond-card">
+          <h4 class="beyond-skill"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#team"></use></svg>Equipe e competitividade</h4>
+          <p class="beyond-origin">Jogos competitivos</p>
+          <p>FPS e MOBA em equipe: comunicação, estratégia e vontade de vencer.</p>
+          <ul class="games" aria-label="Jogos">
+            <li><svg class="icon" role="img" aria-label="Counter-Strike 2"><use href="assets/icons/sprite.svg#counterstrike"></use></svg></li>
+            <li><svg class="icon" role="img" aria-label="Valorant"><use href="assets/icons/sprite.svg#valorant"></use></svg></li>
+            <li><svg class="icon" role="img" aria-label="League of Legends"><use href="assets/icons/sprite.svg#leagueoflegends"></use></svg></li>
+            <li><svg class="icon" role="img" aria-label="GTA VI e Red Dead Redemption 2, da Rockstar Games"><use href="assets/icons/sprite.svg#rockstar"></use></svg></li>
+          </ul>
+        </li>
+        <li class="beyond-card">
+          <h4 class="beyond-skill"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#film"></use></svg>Reflexão</h4>
+          <p class="beyond-origin">Filmes</p>
+          <p>Gosto de filmes que me fazem pensar. Interstellar é o meu preferido e de onde eu tiro muitas reflexões.</p>
+          <ul class="films" aria-label="Filmes">
+            <li class="film-favorite">Interstellar</li>
+            <li>O Cavaleiro das Trevas</li>
+            <li>A Origem</li>
+            <li>Harry Potter</li>
+          </ul>
+        </li>
+        <li class="beyond-card">
+          <h4 class="beyond-skill"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#megaphone"></use></svg>Comunicação</h4>
+          <p class="beyond-origin">Meu canal no YouTube</p>
+          <p>Gravar e explicar o que eu construo me obriga a organizar as ideias e falar com clareza.</p>
+        </li>
+      </ul>
     </section>
 
-    <section id="novidades" class="section" aria-labelledby="novidades-titulo">
-      <h2 id="novidades-titulo">O que eu ando fazendo</h2>
-      <p>Em construção.</p>
+    <section id="novidades" class="section section-compact" aria-labelledby="novidades-titulo">
+      <h2 id="novidades-titulo" class="section-title">O que eu ando <span class="highlight">produzindo</span></h2>
+      <p class="section-lead">Vem acompanhar meu linkedin.</p>
+
+      <ul class="feed" data-feed="posts"></ul>
+      <p class="feed-empty" data-feed-empty="posts" hidden>Os primeiros posts aparecerão aqui em breve...</p>
+      <noscript><p class="feed-empty">Os posts aparecem aqui com o JavaScript ligado.</p></noscript>
+
+      <div class="feed-actions">
+        <a class="button" href="https://www.linkedin.com/in/gabrielcalado-tech/" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#linkedin"></use></svg>
+          Linkedin
+        </a>
+        <a class="button button-primary" href="https://github.com/GabrielCaladow" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#github"></use></svg>
+          GitHub
+        </a>
+      </div>
+
+      <h3 class="feed-subtitle">
+        <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#youtube"></use></svg>
+        Últimos vídeos no YouTube
+      </h3>
+      <ul class="feed videos" data-feed="videos"></ul>
+      <p class="feed-empty" data-feed-empty="videos" hidden>Primeiro vídeo em breve...</p>
     </section>
 
-    <section id="eventos" class="section" aria-labelledby="eventos-titulo">
-      <h2 id="eventos-titulo">Eventos</h2>
-      <p>Em construção.</p>
+    <section id="eventos" class="section section-compact" aria-labelledby="eventos-titulo">
+      <h2 id="eventos-titulo" class="section-title">Meus próximos <span class="highlight">eventos</span></h2>
+      <p class="section-lead">Venha participar também!</p>
+
+      <ul class="feed" data-feed="events"></ul>
+      <p class="feed-empty" data-feed-empty="events" hidden>Nenhum evento marcado por enquanto.</p>
+      <noscript><p class="feed-empty">Os eventos aparecem aqui com o JavaScript ligado.</p></noscript>
     </section>
 
     <section id="contato" class="section" aria-labelledby="contato-titulo">

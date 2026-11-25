@@ -1,0 +1,41 @@
+name: Atualizar vídeos do YouTube
+
+on:
+  schedule:
+    - cron: "0 9 * * *" # todo dia às 06:00 de Brasília
+  workflow_dispatch: # botão "Run workflow" para rodar na hora
+
+permissions:
+  contents: write # só o necessário para commitar o videos.json e as capas
+
+concurrency:
+  group: update-videos
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Ler o feed e baixar as capas
+        run: node scripts/update-videos.mjs
+        env:
+          YOUTUBE_CHANNEL_ID: ${{ vars.YOUTUBE_CHANNEL_ID }}
+
+      - name: Commitar se algo mudou
+        run: |
+          git add assets/data/videos.json assets/img/videos
+          if git diff --cached --quiet; then
+            echo "Nenhum vídeo novo."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "auto: atualiza vídeos do YouTube"
+          git push
