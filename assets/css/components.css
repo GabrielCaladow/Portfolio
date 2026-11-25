@@ -316,6 +316,8 @@
 }
 
 .tool-python { --brand: #3776ab; }
+/* A cor oficial do C (#a8b9cc) some sobre o cream; este tom mais escuro da mesma família aparece. */
+.tool-c { --brand: #5c6f8c; }
 .tool-javascript { --brand: #e8c600; }
 .tool-html { --brand: #e34f26; }
 .tool-css { --brand: #1572b6; }
@@ -327,3 +329,122 @@
 .tool-arduino { --brand: #00878f; }
 .tool-claude { --brand: #d97757; }
 .tool-obsidian { --brand: #7c3aed; }
+
+/* Card de projeto: o card sobe com sombra, a camada escura com o nome some
+   e o botão fica coral. Os detalhes ficam sempre visíveis (funciona no celular). */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-cover {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+  color: rgb(255 253 208 / 35%);
+}
+
+.project-cover::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 4px;
+  background: var(--color-accent);
+}
+
+.project-cover-icon {
+  width: 72px;
+  height: 72px;
+}
+
+.project-cover-larryking { background: #1f2a5c; }
+.project-cover-streetlight { background: #24405a; }
+.project-cover-brain { background: #3a2463; }
+
+.project-shade {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px;
+  background: rgb(0 0 40 / 62%);
+  color: var(--cream);
+  text-align: center;
+  transition: opacity 0.35s ease;
+}
+
+.project-name {
+  font-size: 1.25rem;
+}
+
+.project-tools {
+  display: flex;
+  gap: 8px;
+}
+
+.project-tools li {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgb(255 253 208 / 30%);
+  border-radius: 8px;
+  background: rgb(255 253 208 / 16%);
+  font-size: 16px;
+}
+
+.project-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  font-size: 0.875rem;
+}
+
+.project-details p {
+  line-height: 1.45;
+}
+
+.project-details strong {
+  display: block;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.project-more {
+  flex-shrink: 0;
+  padding: 7px 14px;
+  border: 1.5px solid var(--color-accent);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgb(0 0 80 / 18%);
+}
+
+.project-card:hover .project-shade,
+.project-card:focus-visible .project-shade {
+  opacity: 0;
+}
+
+.project-card:hover .project-more,
+.project-card:focus-visible .project-more {
+  background: var(--color-accent);
+}

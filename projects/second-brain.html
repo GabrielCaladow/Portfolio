@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Segundo cérebro com IA · Gabriel Calado</title>
+  <meta name="description" content="Case: como Gabriel Calado usa IA todo dia num segundo cérebro no Obsidian, com plugin próprio e assistente agendado.">
+  <link rel="preload" href="../assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/project.css">
+  <script type="module" src="../assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="header-sentinel" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-bar">
+      <a class="logo" href="../index.html" aria-label="Gabriel Calado, voltar ao início">
+        <span class="logo-mark" aria-hidden="true">G<span class="logo-dot">.</span></span>
+      </a>
+      <nav aria-label="Seções do portfólio">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="../index.html#inicio" data-tooltip="Início"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#home"></use></svg><span class="nav-label">Início</span></a></li>
+          <li><a class="nav-link" href="../index.html#projetos" data-tooltip="Projetos"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#grid"></use></svg><span class="nav-label">Projetos</span></a></li>
+          <li><a class="nav-link" href="../index.html#sobre" data-tooltip="Sobre"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#user"></use></svg><span class="nav-label">Sobre</span></a></li>
+          <li><a class="nav-link" href="../index.html#novidades" data-tooltip="Novidades"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#activity"></use></svg><span class="nav-label">Novidades</span></a></li>
+          <li><a class="nav-link" href="../index.html#eventos" data-tooltip="Eventos"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#calendar"></use></svg><span class="nav-label">Eventos</span></a></li>
+          <li><a class="nav-link" href="../index.html#contato" data-tooltip="Contato"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#mail"></use></svg><span class="nav-label">Contato</span></a></li>
+        </ul>
+      </nav>
+      <a class="header-cta" href="mailto:gabrielcastrocalado@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio">
+        <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#mail"></use></svg>
+        <span class="header-cta-label">Vamos conversar</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="conteudo" class="case">
+    <a class="case-back" href="../index.html#projetos">← Voltar aos projetos</a>
+
+    <p class="pill">Uso diário de IA</p>
+    <h1 class="case-title">Segundo cérebro <span class="highlight">com IA</span></h1>
+
+    <ul class="case-tools" aria-label="Ferramentas usadas">
+      <li><svg class="icon" role="img" aria-label="Obsidian"><use href="../assets/icons/sprite.svg#obsidian"></use></svg></li>
+      <li><svg class="icon" role="img" aria-label="Claude"><use href="../assets/icons/sprite.svg#claude"></use></svg></li>
+      <li><svg class="icon" role="img" aria-label="TypeScript"><use href="../assets/icons/sprite.svg#typescript"></use></svg></li>
+      <li><svg class="icon" role="img" aria-label="Git"><use href="../assets/icons/sprite.svg#git"></use></svg></li>
+    </ul>
+
+    <div class="case-banner">
+      <div class="project-cover project-cover-brain">
+        <svg class="project-cover-icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#obsidian"></use></svg>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <nav class="case-toc" aria-label="Partes do case">
+        <a href="#problema">O problema</a>
+        <a href="#solucao">O que eu fiz</a>
+        <a href="#resultado">Resultado</a>
+        <a href="#aprendizado">O que aprendi</a>
+      </nav>
+
+      <div class="case-content">
+        <section id="problema" aria-labelledby="problema-titulo">
+          <h2 id="problema-titulo">O problema</h2>
+          <p>Muita gente monta um "segundo cérebro" com IA copiando o de outra pessoa. Fica bonito, mas a pessoa não sabe o que tem lá dentro nem o que a IA fez sozinha.</p>
+          <p>Eu queria o contrário: um sistema em que eu continuo pensando, e a IA trabalha a meu favor.</p>
+        </section>
+
+        <section id="solucao" aria-labelledby="solucao-titulo">
+          <h2 id="solucao-titulo">O que eu fiz</h2>
+          <p>Organizei minhas notas no Obsidian com o método PARA e separei dois espaços:</p>
+          <ul>
+            <li><strong>O meu:</strong> notas, reflexões e estudos que a IA pode ler e sugerir, mas não altera sem eu pedir.</li>
+            <li><strong>O da IA:</strong> uma pasta onde ela registra o que fez, guarda decisões, memória e documentos de projeto.</li>
+            <li><strong>Plugin próprio, em TypeScript:</strong> uma aba "Central" no Obsidian onde aparecem as sugestões da IA, com botões de aceitar e recusar.</li>
+            <li><strong>Assistente agendado:</strong> rotinas do Claude Code que rodam sozinhas todo dia e todo domingo, revisam o que mudou e deixam um relatório.</li>
+            <li><strong>Sincronizado pelo Git</strong> entre o notebook e o computador.</li>
+          </ul>
+        </section>
+
+        <section id="resultado" aria-labelledby="resultado-titulo">
+          <h2 id="resultado-titulo">Resultado</h2>
+          <p>É o sistema que eu uso todo dia, inclusive para planejar e documentar este portfólio.</p>
+          <p class="case-note">Em breve: um print do grafo das notas e da Central funcionando.</p>
+        </section>
+
+        <section id="aprendizado" aria-labelledby="aprendizado-titulo">
+          <h2 id="aprendizado-titulo">O que aprendi</h2>
+          <p>IA rende mais com regras claras: o que ela pode fazer, o que ela não pode e onde ela registra o que fez. Sem isso, ela vira uma caixa-preta.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
