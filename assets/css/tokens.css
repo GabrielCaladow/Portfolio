@@ -8,6 +8,8 @@
   --color-text: var(--navy);
   --color-muted: #3b3b7a;
   --color-accent: var(--coral);
+  /* O coral puro não tem contraste para texto sobre o cream; este tom mais fundo tem (5:1). */
+  --color-accent-text: #c43e14;
   --color-line: rgb(0 0 128 / 12%);
 
   --font-sans: "Geist", system-ui, sans-serif;

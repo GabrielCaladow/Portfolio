@@ -14,61 +14,103 @@
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="header-sentinel" aria-hidden="true"></div>
 
   <header class="site-header">
-    <a class="logo" href="#inicio" aria-label="Gabriel Calado, voltar ao início">
-      <span class="logo-mark" aria-hidden="true">G<span class="logo-dot">.</span></span>
-    </a>
-    <nav aria-label="Seções do portfólio">
-      <ul class="nav-list">
-        <li>
-          <a class="nav-link" href="#inicio" data-tooltip="Início">
-            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#home"></use></svg>
-            <span class="nav-label">Início</span>
-          </a>
-        </li>
-        <li>
-          <a class="nav-link" href="#projetos" data-tooltip="Projetos">
-            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#grid"></use></svg>
-            <span class="nav-label">Projetos</span>
-          </a>
-        </li>
-        <li>
-          <a class="nav-link" href="#sobre" data-tooltip="Sobre">
-            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#user"></use></svg>
-            <span class="nav-label">Sobre</span>
-          </a>
-        </li>
-        <li>
-          <a class="nav-link" href="#novidades" data-tooltip="Novidades">
-            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#activity"></use></svg>
-            <span class="nav-label">Novidades</span>
-          </a>
-        </li>
-        <li>
-          <a class="nav-link" href="#eventos" data-tooltip="Eventos">
-            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#calendar"></use></svg>
-            <span class="nav-label">Eventos</span>
-          </a>
-        </li>
-        <li>
-          <a class="nav-link" href="#contato" data-tooltip="Contato">
-            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#mail"></use></svg>
-            <span class="nav-label">Contato</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <a class="header-cta" href="mailto:gabrielcastrocalado@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio">
-      <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#mail"></use></svg>
-      <span class="header-cta-label">Vamos conversar</span>
-    </a>
+    <div class="header-bar">
+      <a class="logo" href="#inicio" aria-label="Gabriel Calado, voltar ao início">
+        <span class="logo-mark" aria-hidden="true">G<span class="logo-dot">.</span></span>
+      </a>
+      <nav aria-label="Seções do portfólio">
+        <ul class="nav-list">
+          <li>
+            <a class="nav-link" href="#inicio" data-tooltip="Início">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#home"></use></svg>
+              <span class="nav-label">Início</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#projetos" data-tooltip="Projetos">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#grid"></use></svg>
+              <span class="nav-label">Projetos</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#sobre" data-tooltip="Sobre">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#user"></use></svg>
+              <span class="nav-label">Sobre</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#novidades" data-tooltip="Novidades">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#activity"></use></svg>
+              <span class="nav-label">Novidades</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#eventos" data-tooltip="Eventos">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#calendar"></use></svg>
+              <span class="nav-label">Eventos</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#contato" data-tooltip="Contato">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#mail"></use></svg>
+              <span class="nav-label">Contato</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <a class="header-cta" href="mailto:gabrielcastrocalado@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio">
+        <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#mail"></use></svg>
+        <span class="header-cta-label">Vamos conversar</span>
+      </a>
+    </div>
   </header>
 
   <main id="conteudo">
-    <section id="inicio" class="section" aria-labelledby="inicio-titulo">
-      <h1 id="inicio-titulo">Gabriel Calado</h1>
-      <p>Hero em construção.</p>
+    <section id="inicio" class="hero-section" aria-labelledby="inicio-titulo">
+      <div class="hero">
+        <div class="hero-text">
+          <p class="pill">Olá, seja bem-vindo(a) ao meu portfólio!!</p>
+          <h1 id="inicio-titulo" class="hero-title">Gabriel <span class="highlight">Calado</span></h1>
+          <p class="hero-lead">
+            Sou estudante de <strong>Ciência da Computação</strong> na
+            <a href="https://www.cesar.school/" target="_blank" rel="noopener noreferrer">CESAR School</a>.
+            Faço projetos freelance de <strong>automação</strong>, <strong>inteligência artificial</strong>
+            e <strong>desenvolvimento web</strong>.
+          </p>
+          <p class="hero-lead">
+            Procuro um estágio para aplicar o que já sei e aprender ainda mais.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projetos">Ver projetos</a>
+            <a class="button" href="#contato">Falar comigo</a>
+          </div>
+        </div>
+
+        <figure class="hero-photo">
+          <img src="assets/img/gabriel.webp" alt="Gabriel Calado sorrindo, de óculos e camiseta preta, com o crachá da CESAR School" width="720" height="912">
+        </figure>
+      </div>
+
+      <h2 class="tools-title">Ferramentas que <span class="tools-title-accent">domino</span></h2>
+      <div class="tools" data-marquee>
+        <ul class="tools-track" aria-label="Ferramentas que domino">
+          <li class="tool tool-python"><svg class="icon" role="img" aria-label="Python"><use href="assets/icons/sprite.svg#python"></use></svg></li>
+          <li class="tool tool-javascript"><svg class="icon" role="img" aria-label="JavaScript"><use href="assets/icons/sprite.svg#javascript"></use></svg></li>
+          <li class="tool tool-html"><svg class="icon" role="img" aria-label="HTML"><use href="assets/icons/sprite.svg#html5"></use></svg></li>
+          <li class="tool tool-css"><svg class="icon" role="img" aria-label="CSS"><use href="assets/icons/sprite.svg#css3"></use></svg></li>
+          <li class="tool tool-react"><svg class="icon" role="img" aria-label="React"><use href="assets/icons/sprite.svg#react"></use></svg></li>
+          <li class="tool tool-vite"><svg class="icon" role="img" aria-label="Vite"><use href="assets/icons/sprite.svg#vite"></use></svg></li>
+          <li class="tool tool-git"><svg class="icon" role="img" aria-label="Git"><use href="assets/icons/sprite.svg#git"></use></svg></li>
+          <li class="tool tool-github"><svg class="icon" role="img" aria-label="GitHub"><use href="assets/icons/sprite.svg#github"></use></svg></li>
+          <li class="tool tool-typescript"><svg class="icon" role="img" aria-label="TypeScript"><use href="assets/icons/sprite.svg#typescript"></use></svg></li>
+          <li class="tool tool-arduino"><svg class="icon" role="img" aria-label="Arduino"><use href="assets/icons/sprite.svg#arduino"></use></svg></li>
+          <li class="tool tool-claude"><svg class="icon" role="img" aria-label="Claude"><use href="assets/icons/sprite.svg#claude"></use></svg></li>
+          <li class="tool tool-obsidian"><svg class="icon" role="img" aria-label="Obsidian"><use href="assets/icons/sprite.svg#obsidian"></use></svg></li>
+        </ul>
+      </div>
     </section>
 
     <section id="projetos" class="section" aria-labelledby="projetos-titulo">

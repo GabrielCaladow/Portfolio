@@ -1,16 +1,49 @@
+/* Marca a altura do header no topo da página. Quando ela sai da tela, o header vira pílula. */
+.header-sentinel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: var(--header-height);
+  pointer-events: none;
+}
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 10;
-  /* As colunas laterais têm o mesmo tamanho, então o menu fica exatamente no centro. */
+  height: var(--header-height);
+  padding: 0 var(--gutter);
+  background: var(--color-bg);
+  transition: background-color 0.3s;
+}
+
+.header-bar {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 16px;
-  height: var(--header-height);
-  padding: 0 var(--gutter);
-  background: var(--color-bg);
-  border-bottom: 2px dotted var(--color-line);
+  height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition: max-width 0.4s ease, height 0.4s ease, padding 0.4s ease, transform 0.4s ease,
+    background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.site-header.is-floating {
+  background: transparent;
+}
+
+.site-header.is-floating .header-bar {
+  max-width: 760px;
+  height: 56px;
+  padding: 0 8px;
+  border-color: var(--color-line);
+  background: var(--color-surface);
+  box-shadow: 0 10px 30px rgb(0 0 128 / 12%);
+  transform: translateY(10px);
 }
 
 .logo {
@@ -38,13 +71,17 @@
   color: var(--color-accent);
 }
 
-.site-header nav {
+.header-bar nav {
   justify-self: center;
 }
 
 @media (max-width: 760px) {
-  .site-header {
+  .header-bar {
     gap: 8px;
+  }
+
+  .site-header.is-floating .header-bar {
+    padding: 0 6px;
   }
 }
 
@@ -57,4 +94,24 @@
   min-height: 80vh;
   margin: 0 auto;
   padding: 48px var(--gutter);
+}
+
+.hero-section {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 56px var(--gutter) 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }

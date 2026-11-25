@@ -129,3 +129,199 @@
     white-space: nowrap;
   }
 }
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 5px 12px;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.highlight {
+  background: linear-gradient(transparent 62%, rgb(255 106 61 / 38%) 62%);
+  padding: 0 4px;
+}
+
+.hero-title {
+  margin-bottom: 18px;
+  font-size: clamp(2.75rem, 7vw, 4.25rem);
+  letter-spacing: -0.04em;
+}
+
+.hero-lead {
+  max-width: 46ch;
+  margin-bottom: 12px;
+  font-size: 1.125rem;
+}
+
+.hero-lead strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.hero-lead a {
+  color: var(--color-text);
+  font-weight: 600;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.hero-lead a:hover {
+  text-decoration-thickness: 3px;
+}
+
+.hero-actions {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 20px;
+  border: 1.5px solid var(--color-text);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s, box-shadow 0.25s, background-color 0.25s;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgb(0 0 128 / 15%);
+}
+
+.button-primary {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+}
+
+/* isolation cria uma camada própria para a foto: a aura (z-index -1) fica atrás da imagem,
+   mas não some atrás do fundo da página. */
+.hero-photo {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  inset: 6% 4% 20%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(255 106 61 / 60%) 0%, rgb(255 106 61 / 25%) 45%, rgb(255 106 61 / 0%) 70%);
+  filter: blur(28px);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 4.4;
+  object-fit: cover;
+  object-position: top;
+  mask-image: linear-gradient(to bottom, #000 80%, rgb(0 0 0 / 40%));
+}
+
+/* Contraste de peso: a frase leve em navy e a palavra-chave pesada em coral. */
+.tools-title {
+  margin-top: 72px;
+  color: var(--color-muted);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+.tools-title-accent {
+  color: var(--color-accent-text);
+  font-weight: 800;
+}
+
+/* As pontas da faixa somem aos poucos, em vez de cortar os ícones seco. */
+.tools {
+  margin-top: 12px;
+  padding: 20px 0;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+.tools-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  padding: 6px 0;
+}
+
+.tools.is-animated .tools-track {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 0;
+  width: max-content;
+  animation: tools-scroll var(--loop-duration, 40s) linear infinite;
+}
+
+/* Margem em vez de gap: cada ícone carrega o próprio espaço, então a largura de uma volta fica exata. */
+.tools.is-animated .tool {
+  margin-right: 18px;
+}
+
+.tools.is-animated:hover .tools-track {
+  animation-play-state: paused;
+}
+
+@keyframes tools-scroll {
+  from {
+    transform: translateX(calc(-1 * var(--loop-width)));
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.tool {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 26px;
+  opacity: 0.55;
+  transition: transform 0.25s, opacity 0.25s, color 0.25s, box-shadow 0.25s;
+}
+
+.tool:hover {
+  color: var(--brand);
+  opacity: 1;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgb(0 0 128 / 12%);
+}
+
+.tool-python { --brand: #3776ab; }
+.tool-javascript { --brand: #e8c600; }
+.tool-html { --brand: #e34f26; }
+.tool-css { --brand: #1572b6; }
+.tool-react { --brand: #2bb3d9; }
+.tool-vite { --brand: #646cff; }
+.tool-git { --brand: #f05032; }
+.tool-github { --brand: #181717; }
+.tool-typescript { --brand: #3178c6; }
+.tool-arduino { --brand: #00878f; }
+.tool-claude { --brand: #d97757; }
+.tool-obsidian { --brand: #7c3aed; }

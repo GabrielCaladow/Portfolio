@@ -11,3 +11,4 @@ O código está sob a [licença MIT](LICENSE). Textos, fotos e estudos de caso s
 ## Créditos
 
 - Fonte [Geist](https://github.com/vercel/geist-font), da Vercel, sob a SIL Open Font License 1.1 (`assets/fonts/OFL.txt`).
+- Ícones das ferramentas do [Simple Icons](https://simpleicons.org), sob a licença CC0. As marcas pertencem aos seus donos.
