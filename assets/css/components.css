@@ -251,8 +251,8 @@
 
 /* As pontas da faixa somem aos poucos, em vez de cortar os ícones seco. */
 .tools {
-  margin-top: 12px;
-  padding: 20px 0;
+  margin-top: 16px;
+  padding: 24px 0 32px;
   overflow: hidden;
   mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
 }
@@ -261,8 +261,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 18px;
-  padding: 6px 0;
+  gap: 24px;
 }
 
 .tools.is-animated .tools-track {
@@ -270,15 +269,18 @@
   justify-content: flex-start;
   gap: 0;
   width: max-content;
+  /* Avisa o navegador que só o transform muda: a faixa vai para uma camada própria da placa de vídeo. */
+  will-change: transform;
   animation: tools-scroll var(--loop-duration, 40s) linear infinite;
 }
 
 /* Margem em vez de gap: cada ícone carrega o próprio espaço, então a largura de uma volta fica exata. */
 .tools.is-animated .tool {
-  margin-right: 18px;
+  margin-right: 24px;
 }
 
-.tools.is-animated:hover .tools-track {
+.tools.is-animated:hover .tools-track,
+.tools.is-offscreen .tools-track {
   animation-play-state: paused;
 }
 
@@ -295,22 +297,22 @@
 .tool {
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
+  width: 80px;
+  height: 80px;
   border: 1px solid var(--color-line);
-  border-radius: 16px;
+  border-radius: 22px;
   background: var(--color-surface);
   color: var(--color-text);
-  font-size: 26px;
-  opacity: 0.55;
+  font-size: 38px;
+  opacity: 0.7;
   transition: transform 0.25s, opacity 0.25s, color 0.25s, box-shadow 0.25s;
 }
 
 .tool:hover {
   color: var(--brand);
   opacity: 1;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgb(0 0 128 / 12%);
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgb(0 0 128 / 14%);
 }
 
 .tool-python { --brand: #3776ab; }
