@@ -19,6 +19,40 @@ html {
   scroll-behavior: smooth;
   /* Sem isso, o header fixo cobre o título da seção ao clicar num link do menu. */
   scroll-padding-top: var(--header-height);
+  /* Barra de rolagem nas cores do site: coral sobre o fundo. Firefox, Chrome e Edge usam esta linha. */
+  scrollbar-color: var(--color-accent) var(--color-bg);
+}
+
+/* Safari ainda só entende a forma antiga. A largura fica a de sempre, para a barra continuar fácil de pegar. */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid var(--color-bg);
+  border-radius: 999px;
+  background: var(--color-accent);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-text);
+}
+
+/* Troca de página com animação: a capa do projeto no card vira o banner do case (View Transitions).
+   Quem pede menos movimento no sistema, ou usa navegador sem suporte, troca de página normalmente. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  ::view-transition-group(*) {
+    animation-duration: 0.45s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
 }
 
 body {

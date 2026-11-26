@@ -450,6 +450,12 @@
 .project-cover-brain { background: #3a2463; }
 .project-cover-portfolio { background: #00004d; }
 
+/* O mesmo nome no card (home) e no banner (case): é assim que o navegador sabe que um vira o outro. */
+.project-cover-larryking { view-transition-name: cover-larryking; }
+.project-cover-streetlight { view-transition-name: cover-streetlight; }
+.project-cover-brain { view-transition-name: cover-brain; }
+.project-cover-portfolio { view-transition-name: cover-portfolio; }
+
 .project-shade {
   position: absolute;
   inset: 0;
