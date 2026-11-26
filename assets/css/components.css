@@ -619,7 +619,8 @@
   margin: 22px auto;
   padding: 5px 14px;
   border-radius: 999px;
-  background: rgb(255 106 61 / 18%);
+  /* 10% e não mais: acima disso o texto coral perde o contraste mínimo de 4,5:1. */
+  background: rgb(255 106 61 / 10%);
   color: var(--color-accent-text);
   font-size: 0.85rem;
   font-weight: 700;

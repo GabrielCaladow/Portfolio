@@ -1,10 +1,14 @@
 # Portfólio · Gabriel Calado
 
 [![HTML válido no W3C](https://img.shields.io/badge/W3C-HTML_v%C3%A1lido-000080)](https://validator.w3.org/nu/)
+[![Mozilla Observatory A+](https://img.shields.io/badge/Mozilla_Observatory-A%2B-000080)](https://developer.mozilla.org/en-US/observatory/analyze?host=gabrielcalado.netlify.app)
+[![Lighthouse desempenho 100 e SEO 100](https://img.shields.io/badge/Lighthouse-desempenho_100_%C2%B7_SEO_100-000080)](https://pagespeed.web.dev/analysis/https-gabrielcalado-netlify-app/mhhirp2lgg4rc7yhcl9n20?form_factor=desktop)
 [![Sem dependências](https://img.shields.io/badge/depend%C3%AAncias-0-000080)](#as-decisões)
 [![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-ff6a3d)](LICENSE)
 
 Meu portfólio pessoal. Sou estudante de Ciência da Computação na CESAR School, em Recife, e construí este site do zero, só com HTML, CSS e JavaScript, para mostrar meus projetos e o jeito como eu escrevo código.
+
+**No ar:** [gabrielcalado.netlify.app](https://gabrielcalado.netlify.app/)
 
 ## As decisões
 
