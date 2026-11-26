@@ -945,3 +945,12 @@
     display: none;
   }
 }
+
+.contact-email {
+  justify-content: center;
+  text-align: left;
+}
+
+.social {
+  justify-content: center;
+}

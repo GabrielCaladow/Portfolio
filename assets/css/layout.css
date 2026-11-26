@@ -248,3 +248,20 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Contato centralizado: título e frase em cima, e-mail e redes embaixo. */
+.contact {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.contact-lead {
+  margin: 0 auto;
+}
+
+.contact-actions {
+  justify-items: center;
+  width: min(100%, 560px);
+}
