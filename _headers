@@ -1,0 +1,8 @@
+# Cabeçalhos de segurança aplicados pelo Netlify em todas as páginas.
+# O Netlify já serve o site em HTTPS e manda o HSTS sozinho; o HSTS próprio entra junto com o domínio.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-Frame-Options: DENY

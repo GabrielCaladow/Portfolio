@@ -1,3 +1,5 @@
+/* ---------- Header ---------- */
+
 /* Marca a altura do header no topo da página. Quando ela sai da tela, o header vira pílula. */
 .header-sentinel {
   position: absolute;
@@ -30,6 +32,10 @@
   border-radius: 999px;
   transition: max-width 0.4s ease, height 0.4s ease, padding 0.4s ease, transform 0.4s ease,
     background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.header-bar nav {
+  justify-self: center;
 }
 
 .site-header.is-floating {
@@ -71,10 +77,6 @@
   color: var(--color-accent);
 }
 
-.header-bar nav {
-  justify-self: center;
-}
-
 @media (max-width: 760px) {
   .header-bar {
     gap: 8px;
@@ -85,9 +87,7 @@
   }
 }
 
-.header-cta {
-  justify-self: end;
-}
+/* ---------- Seções ---------- */
 
 .section {
   max-width: var(--content-width);
@@ -95,6 +95,26 @@
   margin: 0 auto;
   padding: 48px var(--gutter);
 }
+
+.section-compact {
+  min-height: 0;
+}
+
+.section-centered {
+  text-align: center;
+}
+
+.section-title {
+  margin-bottom: 40px;
+  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  letter-spacing: -0.03em;
+}
+
+.section-lead {
+  margin: -28px 0 28px;
+}
+
+/* ---------- Hero ---------- */
 
 .hero-section {
   max-width: var(--content-width);
@@ -116,27 +136,14 @@
   }
 }
 
-.section-centered {
-  text-align: center;
-}
+/* ---------- Projetos ---------- */
 
-.section-title {
-  margin-bottom: 40px;
-  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
-  letter-spacing: -0.03em;
-}
-
+/* Quatro projetos: duas colunas no computador ficam mais equilibradas que 3 + 1. */
 .projects {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 28px;
   text-align: left;
-}
-
-@media (max-width: 960px) {
-  .projects {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 640px) {
@@ -144,6 +151,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------- Sobre e Além do Código ---------- */
 
 .about-text {
   display: grid;
@@ -152,41 +161,20 @@
   font-size: 1.075rem;
 }
 
-/* Três cards na primeira linha e dois mais largos na segunda. */
+/* O canal em destaque em cima e três cards da mesma largura embaixo. */
 .beyond {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-}
-
-.beyond > li {
-  grid-column: span 2;
-}
-
-.beyond > li:nth-child(4),
-.beyond > li:nth-child(5) {
-  grid-column: span 3;
 }
 
 @media (max-width: 860px) {
   .beyond {
     grid-template-columns: 1fr;
   }
-
-  .beyond > li,
-  .beyond > li:nth-child(4),
-  .beyond > li:nth-child(5) {
-    grid-column: auto;
-  }
 }
 
-.section-compact {
-  min-height: 0;
-}
-
-.section-lead {
-  margin: -28px 0 28px;
-}
+/* ---------- Posts, vídeos e eventos ---------- */
 
 .feed {
   display: grid;
@@ -194,29 +182,29 @@
   gap: 18px;
 }
 
-/* Quatro projetos: duas colunas no computador ficam mais equilibradas que 3 + 1. */
-.projects {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-@media (max-width: 640px) {
-  .projects {
-    grid-template-columns: 1fr;
-  }
-}
+/* ---------- Contato e rodapé ---------- */
 
 /* Altura mínima: assim o Contato consegue chegar ao meio da tela e o menu marca "Contato". */
 .contact {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-content: center;
   align-items: center;
-  justify-content: space-between;
-  gap: 32px;
+  gap: 48px;
   min-height: 60vh;
+  text-align: center;
 }
 
 .contact .section-title {
   margin-bottom: 12px;
+}
+
+.contact-actions {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  width: min(100%, 560px);
 }
 
 .site-footer {
@@ -231,59 +219,28 @@
   font-size: 0.8rem;
 }
 
-.contact {
+/* ---------- Página 404 ---------- */
+
+.not-found {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  gap: 48px;
-}
-
-.contact-actions {
-  display: grid;
-  gap: 18px;
-  justify-items: start;
-}
-
-@media (max-width: 860px) {
-  .contact {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Contato centralizado: título e frase em cima, e-mail e redes embaixo. */
-.contact {
-  grid-template-columns: 1fr;
-  justify-items: center;
+  place-items: center;
   align-content: center;
+  gap: 20px;
+  min-height: 100vh;
+  padding: 32px var(--gutter);
   text-align: center;
 }
 
-.contact-lead {
-  margin: 0 auto;
+.not-found .logo {
+  justify-self: center;
 }
 
-.contact-actions {
-  justify-items: center;
-  width: min(100%, 560px);
+.not-found-code {
+  font-size: clamp(5rem, 22vw, 10rem);
+  letter-spacing: -0.06em;
+  line-height: 1;
 }
 
-/* Além do Código: o canal em destaque em cima e três cards da mesma largura embaixo. */
-.beyond-title,
-.beyond-lead {
-  text-align: center;
-}
-
-.beyond {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.beyond > li,
-.beyond > li:nth-child(4),
-.beyond > li:nth-child(5) {
-  grid-column: auto;
-}
-
-@media (max-width: 860px) {
-  .beyond {
-    grid-template-columns: 1fr;
-  }
+.not-found-text {
+  font-size: 1.1rem;
 }
