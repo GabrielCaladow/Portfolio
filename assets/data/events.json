@@ -2,7 +2,19 @@
   {
     "date": "2026-12-12",
     "name": "TechDesign",
+    "tagline": "CESAR School",
     "city": "Recife",
-    "place": "Brum e Tiradentes"
+    "place": "Brum e Tiradentes",
+    "colors": { "from": "#222222", "to": "#ff6600" }
+  },
+  {
+    "date": "2026-11-11",
+    "endDate": "2026-11-14",
+    "name": "REC'n'Play",
+    "tagline": "O Futuro Nasce Aqui",
+    "city": "Recife",
+    "place": "Bairro do Recife",
+    "url": "https://recnplay.pe",
+    "colors": { "from": "#6a1fd1", "to": "#ff5a1f" }
   }
 ]

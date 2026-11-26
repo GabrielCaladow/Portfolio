@@ -182,6 +182,12 @@
   gap: 18px;
 }
 
+.events {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
+  gap: 22px;
+}
+
 /* ---------- Contato e rodapé ---------- */
 
 /* Altura mínima: assim o Contato consegue chegar ao meio da tela e o menu marca "Contato". */

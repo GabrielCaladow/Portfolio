@@ -24,27 +24,28 @@ const isValidPost = (post) =>
 const isValidVideo = (video) =>
   /^[\w-]{11}$/.test(video?.id) && isText(video.title) && ISO_DATE.test(video.date);
 
+const HEX_COLOR = /^#[0-9a-f]{6}$/i;
+const optionalText = (value) => value === undefined || isText(value);
+
 const isValidEvent = (event) =>
   ISO_DATE.test(event?.date) &&
+  (event.endDate === undefined || (ISO_DATE.test(event.endDate) && event.endDate >= event.date)) &&
   isText(event.name) &&
   isText(event.city) &&
-  (event.place === undefined || isText(event.place));
+  optionalText(event.place) &&
+  optionalText(event.tagline) &&
+  (event.url === undefined || (isText(event.url) && event.url.startsWith("https://"))) &&
+  (event.colors === undefined || (HEX_COLOR.test(event.colors.from) && HEX_COLOR.test(event.colors.to)));
+
+// Data de hoje no formato do JSON (AAAA-MM-DD), no fuso de quem está vendo o site.
+const today = () => new Date().toLocaleDateString("sv-SE");
+const isPast = (event) => (event.endDate ?? event.date) < today();
 
 function element(tag, className, text) {
   const node = document.createElement(tag);
   if (className) node.className = className;
   if (text) node.textContent = text;
   return node;
-}
-
-function dateBadge(isoDate) {
-  const badge = element("time", "date-badge");
-  badge.dateTime = isoDate;
-  badge.append(
-    element("span", "date-day", isoDate.slice(8, 10)),
-    element("span", "date-month", MONTHS[Number(isoDate.slice(5, 7)) - 1]),
-  );
-  return badge;
 }
 
 // "há 2 dias", "semana passada", "há 2 meses", como no LinkedIn.
@@ -125,13 +126,52 @@ function renderVideo(video) {
   return item;
 }
 
-function renderEvent(event) {
-  const item = element("li", "feed-card");
-  const where = event.place ? `${event.city} · ${event.place}` : event.city;
+// "12" ou "11–14" e o mês. Se o evento atravessar o mês, o mês vira "NOV–DEZ".
+function eventDays(event) {
+  const end = event.endDate ?? event.date;
+  const startMonth = MONTHS[Number(event.date.slice(5, 7)) - 1];
+  const endMonth = MONTHS[Number(end.slice(5, 7)) - 1];
+  const days = end === event.date ? event.date.slice(8, 10) : `${event.date.slice(8, 10)}–${end.slice(8, 10)}`;
+  return { days, month: startMonth === endMonth ? startMonth : `${startMonth}–${endMonth}` };
+}
 
-  const body = element("div", "feed-body");
-  body.append(element("h3", "feed-title", event.name), element("p", "feed-text", where));
-  item.append(dateBadge(event.date), body);
+// Ingresso: a faixa com as cores do evento e a data, e as informações ao lado.
+// Evento que já passou vira ingresso usado (desbotado e carimbado); o próximo fica aceso.
+function renderEvent(event) {
+  const past = isPast(event);
+  const item = element("li", `ticket ${past ? "is-past" : "is-upcoming"}`);
+  if (event.colors) {
+    item.style.setProperty("--ev-from", event.colors.from);
+    item.style.setProperty("--ev-to", event.colors.to);
+  }
+
+  const { days, month } = eventDays(event);
+  const stub = element("time", "ticket-stub");
+  stub.dateTime = event.date;
+  stub.append(
+    element("span", "ticket-days", days),
+    element("span", "ticket-month", month),
+    element("span", "ticket-year", event.date.slice(0, 4)),
+  );
+  if (past) stub.append(icon("check", "ticket-stamp"));
+
+  const info = element("div", "ticket-info");
+  info.append(
+    element("span", "visually-hidden", past ? "Evento que já aconteceu:" : "Próximo evento:"),
+    element("h3", "ticket-name", event.name),
+  );
+  if (event.tagline) info.append(element("p", "ticket-tagline", event.tagline));
+  info.append(element("p", "ticket-where", event.place ? `${event.city} · ${event.place}` : event.city));
+
+  if (event.url) {
+    const link = element("a", "ticket-link", `${new URL(event.url).hostname.replace(/^www\./, "")} ↗`);
+    link.href = event.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    info.append(link);
+  }
+
+  item.append(stub, info);
   return item;
 }
 
@@ -178,6 +218,10 @@ export function initFeeds() {
     url: "assets/data/events.json",
     isValid: isValidEvent,
     render: renderEvent,
-    order: (events) => events.sort((a, b) => a.date.localeCompare(b.date)),
+    // Os próximos primeiro (do mais perto ao mais longe), depois os que já passaram (do mais recente).
+    order: (events) => [
+      ...events.filter((event) => !isPast(event)).sort((a, b) => a.date.localeCompare(b.date)),
+      ...events.filter(isPast).sort((a, b) => b.date.localeCompare(a.date)),
+    ],
   });
 }

@@ -1,5 +1,9 @@
 # Portfólio · Gabriel Calado
 
+[![HTML válido no W3C](https://img.shields.io/badge/W3C-HTML_v%C3%A1lido-000080)](https://validator.w3.org/nu/)
+[![Sem dependências](https://img.shields.io/badge/depend%C3%AAncias-0-000080)](#as-decisões)
+[![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-ff6a3d)](LICENSE)
+
 Meu portfólio pessoal. Sou estudante de Ciência da Computação na CESAR School, em Recife, e construí este site do zero, só com HTML, CSS e JavaScript, para mostrar meus projetos e o jeito como eu escrevo código.
 
 ## As decisões
