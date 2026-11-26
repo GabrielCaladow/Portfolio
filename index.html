@@ -345,6 +345,31 @@
           </li>
         </ul>
       </div>
+
+      <!-- O Netlify lê este formulário no deploy (data-netlify) e guarda as mensagens no painel do site.
+           Funciona sem JavaScript: o envio é um POST comum, que termina na página de obrigado. -->
+      <form class="contact-form" name="contato" method="POST" action="/obrigado.html" data-netlify="true" data-netlify-honeypot="empresa">
+        <h3 class="contact-form-title">Ou mande uma mensagem por aqui</h3>
+        <input type="hidden" name="form-name" value="contato">
+        <!-- Armadilha para robôs: pessoas não veem o campo; se ele vier preenchido, o Netlify descarta a mensagem. -->
+        <p hidden>
+          <label>Não preencha <input name="empresa" tabindex="-1" autocomplete="off"></label>
+        </p>
+        <p class="field">
+          <label for="contato-nome">Nome</label>
+          <input id="contato-nome" name="nome" type="text" autocomplete="name" maxlength="100" required>
+        </p>
+        <p class="field">
+          <label for="contato-email">E-mail</label>
+          <input id="contato-email" name="email" type="email" autocomplete="email" maxlength="200" required>
+        </p>
+        <p class="field">
+          <label for="contato-mensagem">Mensagem</label>
+          <textarea id="contato-mensagem" name="mensagem" rows="5" maxlength="2000" required></textarea>
+        </p>
+        <p class="contact-form-note">Uso seus dados só para responder a sua mensagem.</p>
+        <button class="button button-primary" type="submit">Enviar mensagem</button>
+      </form>
     </section>
   </main>
 
