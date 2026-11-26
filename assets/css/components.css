@@ -954,3 +954,166 @@
 .social {
   justify-content: center;
 }
+
+.channel-card {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto 24px;
+  padding: 30px 32px;
+  border: 1px solid var(--color-line);
+  border-radius: 22px;
+  background: var(--color-surface);
+}
+
+.channel-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.channel-badge .icon {
+  color: var(--color-accent);
+}
+
+.channel-head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-right: 120px;
+}
+
+.channel-logo {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  background: #fff;
+}
+
+.channel-logo svg {
+  width: 34px;
+  height: 24px;
+}
+
+.channel-name {
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+}
+
+.channel-desc {
+  margin-top: 4px;
+  font-size: 0.95rem;
+}
+
+.channel-status {
+  width: fit-content;
+  margin: 22px auto;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: rgb(255 106 61 / 18%);
+  color: var(--color-accent-text);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.channel-topics-label {
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+}
+
+.channel-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.channel-topics li {
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.topic-ia { background: #e3e8ff; color: #1b2a9c; }
+.topic-business { background: #ffe4d9; color: #a33a12; }
+.topic-tech { background: #e6f6ea; color: #1d6b34; }
+.topic-future { background: #f1e6ff; color: #5b23a8; }
+
+.channel-subscribe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 14px;
+  background: #e60028;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.channel-subscribe:hover,
+.channel-subscribe:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgb(230 0 40 / 35%);
+}
+
+/* Cards de soft skill centralizados. */
+.beyond-card {
+  text-align: center;
+}
+
+.beyond-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 12px;
+  border-radius: 12px;
+  background: rgb(255 106 61 / 16%);
+  color: var(--color-accent);
+  font-size: 22px;
+}
+
+.beyond-skill {
+  display: block;
+}
+
+.beyond-card .games,
+.beyond-card .films {
+  justify-content: center;
+}
+
+@media (max-width: 560px) {
+  .channel-card {
+    padding: 56px 20px 22px;
+  }
+
+  .channel-head {
+    flex-direction: column;
+    padding-right: 0;
+    text-align: center;
+  }
+}
+
+.channel-handle {
+  margin-left: 6px;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}

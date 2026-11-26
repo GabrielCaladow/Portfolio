@@ -265,3 +265,25 @@
   justify-items: center;
   width: min(100%, 560px);
 }
+
+/* Além do Código: o canal em destaque em cima e três cards da mesma largura embaixo. */
+.beyond-title,
+.beyond-lead {
+  text-align: center;
+}
+
+.beyond {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.beyond > li,
+.beyond > li:nth-child(4),
+.beyond > li:nth-child(5) {
+  grid-column: auto;
+}
+
+@media (max-width: 860px) {
+  .beyond {
+    grid-template-columns: 1fr;
+  }
+}
