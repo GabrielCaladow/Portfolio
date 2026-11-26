@@ -204,3 +204,47 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Altura mínima: assim o Contato consegue chegar ao meio da tela e o menu marca "Contato". */
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 60vh;
+}
+
+.contact .section-title {
+  margin-bottom: 12px;
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 24px var(--gutter) 32px;
+  border-top: 1px solid var(--color-line);
+  font-size: 0.8rem;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 48px;
+}
+
+.contact-actions {
+  display: grid;
+  gap: 18px;
+  justify-items: start;
+}
+
+@media (max-width: 860px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+}
