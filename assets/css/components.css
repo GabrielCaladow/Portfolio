@@ -1117,3 +1117,63 @@
   font-weight: 500;
   letter-spacing: 0;
 }
+
+/* Tela de abertura (intro.js): as letras sobem, o ponto coral cai e quica, e a tela sobe. */
+.intro body {
+  visibility: hidden;
+}
+
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: var(--color-bg);
+  color: var(--color-text);
+  visibility: visible;
+  animation: intro-lift 0.6s cubic-bezier(0.7, 0, 0.3, 1) 1.9s forwards;
+}
+
+.intro-word {
+  font-size: clamp(2.4rem, 8vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+}
+
+.intro-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.4em);
+  animation: intro-up 0.35s ease forwards;
+  animation-delay: calc(var(--i) * 60ms);
+}
+
+.intro-dot {
+  display: inline-block;
+  color: var(--color-accent);
+  opacity: 0;
+  transform: translateY(-1.2em);
+  animation: intro-drop 0.5s cubic-bezier(0.3, 1.6, 0.5, 1) 1.15s forwards;
+}
+
+@keyframes intro-up {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes intro-drop {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes intro-lift {
+  to {
+    transform: translateY(-100%);
+  }
+}
