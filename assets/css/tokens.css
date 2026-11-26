@@ -28,3 +28,20 @@
     --gutter: 16px;
   }
 }
+
+:root {
+  --color-card: #fff;
+  --color-on-accent: var(--navy);
+}
+
+/* Tema escuro: as mesmas variáveis com outros valores. O resto do CSS não muda. */
+:root[data-theme="dark"] {
+  --color-bg: #00002e;
+  --color-surface: #0b0b4a;
+  --color-card: #0b0b4a;
+  --color-text: var(--cream);
+  --color-muted: #c9c7a8;
+  --color-accent-text: #ff8a63;
+  --color-line: rgb(255 253 208 / 14%);
+  color-scheme: dark;
+}
